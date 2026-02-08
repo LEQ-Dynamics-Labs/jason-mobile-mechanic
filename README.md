@@ -1,35 +1,43 @@
-# Jason's Mobile Mechanic Landing Page
+# JW Enterprises - Mobile Mechanic Landing Page
 
-Professional landing page for a mobile mechanic business.
+Professional mobile mechanic landing page for Jason's auto repair business.
 
-## Overview
+## Quick Start
 
-A mobile-first, responsive website built with:
-- Clean, modern design (no gradients, no emojis)
-- Dune-inspired color palette (navy, sand, teal)
-- Professional typography with Inter font
-- Full contact form
-- Service listings with icons
+1. Open `index.html` in a browser to preview
+2. Deploy to GitHub Pages or any static hosting
 
-## Files
+## Customization
 
-- `index.html` - Main landing page (self-contained, no external dependencies besides fonts)
+### Update Contact Information
+Edit these lines in `index.html`:
+- Phone: `(555) 123-4567`
+- Email: `jason@jwenterprises.com`
+- Service Area: "Greater Metro Area - Within 30 miles"
+
+### Services
+Add or modify services in the Services section:
+- Oil Change
+- Brake Service
+- Battery & Electrical
+- Tune-Ups
+- AC & Heating
+- Scheduled Maintenance
+
+## Colors
+Black, Green, Blue color scheme:
+- Primary Green: `#10b981`
+- Secondary Blue: `#3b82f6`
+- Background: `#0a0a0a`
+
+## Form
+Contact form submits to `jason@jwenterprises.com` via mailto link.
 
 ## Deployment
+```bash
+# Deploy to GitHub Pages
+# Repository Settings → Pages → Deploy from main branch
+```
 
-This is a static HTML site. Deploy to:
-- GitHub Pages
-- Netlify
-- Vercel
-- Any static hosting
-
-## Domain
-
-Once you choose a domain name, update:
-1. The `<title>` tag
-2. The contact email in the form
-3. Any phone numbers
-
-## Credits
-
-Built by LEQ Dynamics (https://leq-dynamics.com)
+## Contact
+Questions? Reach out to Rocco at rocco@leq-dynamics.com
