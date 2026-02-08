@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Mechanic - Professional Auto Repair At Your Location</title>
-    <meta name="description" content="Professional mobile mechanic services. We come to you for oil changes, brake service, battery replacement, and more. Serving your area with convenience and quality.">
+    <title>JW Enterprises - Mobile Mechanic Services</title>
+    <meta name="description" content="Professional mobile mechanic services. We come to you for oil changes, brake service, battery replacement, and more. 15+ years experience.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
+            --black: #0a0a0a;
             --navy: #0a1628;
             --navy-mid: #111d32;
             --navy-light: #1a2a44;
-            --sand: #c9b896;
-            --sand-light: #e8dfcc;
-            --sand-dark: #a89b6e;
-            --teal: #0d9488;
-            --teal-dark: #0f766e;
+            --green: #10b981;
+            --green-dark: #059669;
+            --blue: #3b82f6;
+            --blue-deep: #2563eb;
             --white: #ffffff;
             --silver: #c8d2dc;
             --steel: #64748b;
@@ -32,7 +32,7 @@
             font-size: 16px;
             line-height: 1.7;
             color: var(--silver);
-            background: var(--navy);
+            background: var(--black);
         }
 
         h1, h2, h3, h4 {
@@ -41,8 +41,8 @@
             letter-spacing: -0.02em;
         }
 
-        a { color: var(--teal); text-decoration: none; transition: color 0.2s; }
-        a:hover { color: var(--sand); }
+        a { color: var(--green); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--blue); }
 
         .container {
             max-width: 1200px;
@@ -58,9 +58,9 @@
             right: 0;
             z-index: 100;
             padding: 1rem 0;
-            background: rgba(10, 22, 40, 0.95);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(201, 184, 150, 0.15);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
         }
 
         .header-inner {
@@ -76,7 +76,7 @@
             letter-spacing: -0.03em;
         }
 
-        .logo span { color: var(--teal); }
+        .logo span { color: var(--green); }
 
         nav { display: flex; gap: 2rem; align-items: center; }
 
@@ -96,7 +96,7 @@
             padding: 0.75rem 1.5rem;
             font-size: 0.9375rem;
             font-weight: 600;
-            background: var(--teal);
+            background: var(--green);
             color: var(--white);
             border: none;
             border-radius: 8px;
@@ -105,7 +105,7 @@
         }
 
         .cta-btn:hover {
-            background: var(--teal-dark);
+            background: var(--green-dark);
             color: var(--white);
         }
 
@@ -137,7 +137,7 @@
             right: -30%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
             border-radius: 50%;
         }
 
@@ -151,12 +151,12 @@
             display: inline-block;
             margin-bottom: 1.5rem;
             padding: 0.5rem 1rem;
-            background: rgba(13, 148, 136, 0.1);
-            border: 1px solid rgba(13, 148, 136, 0.2);
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
             border-radius: 100px;
             font-size: 0.8125rem;
             font-weight: 600;
-            color: var(--teal);
+            color: var(--green);
             letter-spacing: 0.05em;
             text-transform: uppercase;
         }
@@ -167,7 +167,7 @@
             color: var(--white);
         }
 
-        .hero h1 span { color: var(--teal); }
+        .hero h1 span { color: var(--green); }
 
         .hero p {
             font-size: 1.25rem;
@@ -197,24 +197,24 @@
         }
 
         .btn-primary {
-            background: var(--teal);
+            background: var(--green);
             color: var(--white);
         }
 
         .btn-primary:hover {
-            background: var(--teal-dark);
+            background: var(--green-dark);
             transform: translateY(-2px);
         }
 
         .btn-outline {
             background: transparent;
             color: var(--white);
-            border: 2px solid rgba(201, 184, 150, 0.4);
+            border: 2px solid rgba(59, 130, 246, 0.4);
         }
 
         .btn-outline:hover {
-            border-color: var(--sand);
-            color: var(--sand);
+            border-color: var(--blue);
+            color: var(--blue);
         }
 
         .hero-stats {
@@ -222,7 +222,7 @@
             gap: 3rem;
             margin-top: 4rem;
             padding-top: 2rem;
-            border-top: 1px solid rgba(201, 184, 150, 0.15);
+            border-top: 1px solid rgba(59, 130, 246, 0.15);
         }
 
         .stat-value {
@@ -241,7 +241,7 @@
 
         section { padding: 5rem 0; }
 
-        .section-dark { background: var(--navy-mid); }
+        .section-dark { background: var(--navy); }
 
         .section-header {
             text-align: center;
@@ -255,7 +255,7 @@
             font-weight: 700;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--sand);
+            color: var(--green);
         }
 
         .section-header h2 {
@@ -280,14 +280,14 @@
 
         .service-card {
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(201, 184, 150, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.15);
             border-radius: 16px;
             padding: 2rem;
             transition: all 0.3s;
         }
 
         .service-card:hover {
-            border-color: var(--teal);
+            border-color: var(--green);
             transform: translateY(-4px);
         }
 
@@ -297,7 +297,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(13, 148, 136, 0.1);
+            background: rgba(16, 185, 129, 0.1);
             border-radius: 12px;
             margin-bottom: 1.25rem;
         }
@@ -305,7 +305,7 @@
         .service-icon svg {
             width: 24px;
             height: 24px;
-            stroke: var(--teal);
+            stroke: var(--green);
             fill: none;
             stroke-width: 1.5;
         }
@@ -356,7 +356,7 @@
         .about-features li svg {
             width: 20px;
             height: 20px;
-            stroke: var(--teal);
+            stroke: var(--green);
             fill: none;
             stroke-width: 2;
             flex-shrink: 0;
@@ -364,8 +364,8 @@
         }
 
         .about-image {
-            background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%);
-            border: 1px solid rgba(201, 184, 150, 0.15);
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.15);
             border-radius: 20px;
             padding: 4rem;
             text-align: center;
@@ -373,7 +373,7 @@
 
         .about-image-placeholder {
             font-size: 4rem;
-            color: var(--sand);
+            color: var(--green);
             opacity: 0.5;
         }
 
@@ -410,7 +410,7 @@
         .contact-method svg {
             width: 24px;
             height: 24px;
-            stroke: var(--teal);
+            stroke: var(--green);
             fill: none;
             stroke-width: 1.5;
         }
@@ -428,7 +428,7 @@
 
         .contact-form {
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(201, 184, 150, 0.15);
+            border: 1px solid rgba(59, 130, 246, 0.15);
             border-radius: 16px;
             padding: 2rem;
         }
@@ -453,7 +453,7 @@
             font-size: 1rem;
             font-family: inherit;
             background: var(--navy);
-            border: 1px solid rgba(201, 184, 150, 0.2);
+            border: 1px solid rgba(59, 130, 246, 0.2);
             border-radius: 8px;
             color: var(--white);
             transition: border-color 0.2s;
@@ -463,7 +463,7 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--teal);
+            border-color: var(--green);
         }
 
         .form-group textarea {
@@ -482,7 +482,7 @@
             padding: 1rem;
             font-size: 1rem;
             font-weight: 600;
-            background: var(--teal);
+            background: var(--green);
             color: var(--white);
             border: none;
             border-radius: 8px;
@@ -491,16 +491,16 @@
         }
 
         .form-submit:hover {
-            background: var(--teal-dark);
+            background: var(--green-dark);
         }
 
         /* CTA */
         .cta-section {
             text-align: center;
             padding: 5rem 0;
-            background: var(--navy-mid);
-            border-top: 1px solid rgba(201, 184, 150, 0.15);
-            border-bottom: 1px solid rgba(201, 184, 150, 0.15);
+            background: var(--navy);
+            border-top: 1px solid rgba(59, 130, 246, 0.15);
+            border-bottom: 1px solid rgba(59, 130, 246, 0.15);
         }
 
         .cta-section h2 {
@@ -521,7 +521,7 @@
         /* Footer */
         footer {
             padding: 3rem 0 2rem;
-            border-top: 1px solid rgba(201, 184, 150, 0.15);
+            border-top: 1px solid rgba(59, 130, 246, 0.15);
         }
 
         .footer-content {
@@ -537,7 +537,7 @@
             color: var(--white);
         }
 
-        .footer-brand span { color: var(--teal); }
+        .footer-brand span { color: var(--green); }
 
         .footer-links {
             display: flex;
@@ -555,7 +555,7 @@
             width: 100%;
             margin-top: 1.5rem;
             padding-top: 1.5rem;
-            border-top: 1px solid rgba(201, 184, 150, 0.1);
+            border-top: 1px solid rgba(59, 130, 246, 0.1);
             font-size: 0.8125rem;
             color: var(--steel);
             text-align: center;
@@ -583,7 +583,7 @@
     <header>
         <div class="container">
             <div class="header-inner">
-                <a href="#" class="logo">Mobile<span>Mechanic</span></a>
+                <a href="#" class="logo">JW<span>Enterprises</span></a>
                 <nav>
                     <a href="#services">Services</a>
                     <a href="#about">About</a>
@@ -604,9 +604,9 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-label">Professional Auto Repair</div>
-                <h1>We Come to <span>You</span> for All Your Vehicle Needs</h1>
-                <p>Quality mechanic services at your home or workplace. No tow truck, no waiting at a shop. Just convenient, reliable automotive care.</p>
+                <div class="hero-label">Mobile Mechanic Services</div>
+                <h1>We Come to <span>You</span></h1>
+                <p>Professional auto repair at your home or workplace. No tow truck, no waiting at a shop. Just convenient, reliable automotive care.</p>
                 <div class="hero-buttons">
                     <a href="#contact" class="btn btn-primary">Schedule Service</a>
                     <a href="#services" class="btn btn-outline">View Services</a>
@@ -621,8 +621,8 @@
                         <div class="stat-label">Vehicles Serviced</div>
                     </div>
                     <div>
-                        <div class="stat-value">98%</div>
-                        <div class="stat-label">Customer Satisfaction</div>
+                        <div class="stat-value">Local</div>
+                        <div class="stat-label">Mobile Service</div>
                     </div>
                 </div>
             </div>
@@ -705,14 +705,14 @@
                 <div class="about-content">
                     <div class="section-label">About Us</div>
                     <h2>Honest Work, Fair Prices, No Surprises</h2>
-                    <p>As a mobile mechanic, I bring 15+ years of dealership and independent shop experience directly to your driveway. No shop overhead means competitive pricing without sacrificing quality.</p>
-                    <p>I believe in transparent pricing, honest assessments, and only recommending work that your vehicle actually needs. Every service comes with a written estimate and explanation.</p>
+                    <p>As a mobile mechanic, I bring 15+ years of experience directly to your driveway. No shop overhead means competitive pricing without sacrificing quality.</p>
+                    <p>I believe in transparent pricing, honest assessments, and only recommending work that your vehicle actually needs.</p>
                     <ul class="about-features">
                         <li>
                             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="20 6 9 17 4 12"/>
                             </svg>
-                            <span>ASE Certified with 15+ years experience</span>
+                            <span>15+ years experience in auto repair</span>
                         </li>
                         <li>
                             <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
@@ -740,7 +740,7 @@
                             <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
                         </svg>
                     </div>
-                    <p style="color: var(--sand); font-weight: 600;">Your Location</p>
+                    <p style="color: var(--green); font-weight: 600;">Your Location</p>
                     <p>We bring tools, parts, and expertise to you</p>
                 </div>
             </div>
@@ -776,7 +776,7 @@
                         </svg>
                         <div class="contact-method-info">
                             <strong>Email</strong>
-                            <span>service@mobile-mechanic.com</span>
+                            <span>jason@jwenterprises.com</span>
                         </div>
                     </div>
 
@@ -801,9 +801,14 @@
                             <span>Mon-Sat: 7am - 7pm</span>
                         </div>
                     </div>
+
+                    <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: 12px; padding: 1.5rem; margin-top: 2rem;">
+                        <h4 style="color: var(--green); font-size: 1rem; margin-bottom: 0.75rem;">Need a Written Contract?</h4>
+                        <p style="font-size: 0.9375rem; margin-bottom: 0;">We offer professional service contracts for just $5. Just email Rocco at rocco@leq-dynamics.com and we'll create a clean PDF contract using Google Docs.</p>
+                    </div>
                 </div>
 
-                <form class="contact-form" action="#" method="POST">
+                <form class="contact-form" action="mailto:jason@jwenterprises.com" method="POST" enctype="text/plain">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="name">Your Name</label>
@@ -843,11 +848,11 @@
                 </form>
             </div>
         </div>
-    </section>
+        </section>
 
     <section class="cta-section">
         <div class="container">
-            <h2>Don't Let Car Problems Slow You Down</h2>
+            <h2>Do Not Let Car Problems Slow You Down</h2>
             <p>Get back on the road faster with convenient mobile mechanic service</p>
             <a href="#contact" class="btn btn-primary">Book Your Service Now</a>
         </div>
@@ -856,15 +861,15 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">Mobile<span>Mechanic</span></div>
-                <div class.footer-links">
+                <div class="footer-brand">JW<span>Enterprises</span></div>
+                <div class="footer-links">
                     <a href="#services">Services</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
                 </div>
             </div>
             <div class="footer-copy">
-                &copy; 2026 Mobile Mechanic. All rights reserved. Serving your area with quality auto care.
+                &copy; 2026 JW Enterprises. All rights reserved. Serving your area with quality auto care.
             </div>
         </div>
     </footer>
