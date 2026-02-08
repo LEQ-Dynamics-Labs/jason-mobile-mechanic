@@ -561,6 +561,29 @@
             text-align: center;
         }
 
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.98);
+            backdrop-filter: blur(20px);
+            padding: 1rem 1.5rem 2rem;
+            flex-direction: column;
+            gap: 1rem;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+            z-index: 99;
+        }
+        .mobile-nav.open { display: flex; }
+        .mobile-nav a {
+            color: var(--silver);
+            font-size: 1.125rem;
+            font-weight: 600;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(59, 130, 246, 0.1);
+        }
+        .mobile-nav a:hover { color: var(--white); }
         @media (max-width: 768px) {
             nav { display: none; }
             .mobile-menu-btn { display: block; }
@@ -585,12 +608,17 @@
             <div class="header-inner">
                 <a href="#" class="logo">JW<span>Enterprises</span></a>
                 <nav>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">JW<span>Enterprises</span></a>
+                <nav class="nav-links">
                     <a href="#services">Services</a>
                     <a href="#about">About</a>
                     <a href="#contact">Contact</a>
                 </nav>
-                <a href="#contact" class="cta-btn">Book Service</a>
-                <button class="mobile-menu-btn" aria-label="Menu">
+                <a href="#contact" class="cta-btn" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Book Service</a>
+                <button class="mobile-menu-btn" aria-label="Menu" onclick="toggleMobileNav()">
                     <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
                         <line x1="3" y1="6" x2="21" y2="6"/>
                         <line x1="3" y1="12" x2="21" y2="12"/>
@@ -599,8 +627,12 @@
                 </button>
             </div>
         </div>
+        <div class="mobile-nav" id="mobile-nav">
+            <a href="#services" onclick="toggleMobileNav()">Services</a>
+            <a href="#about" onclick="toggleMobileNav()">About</a>
+            <a href="#contact" onclick="toggleMobileNav()">Contact</a>
+        </div>
     </header>
-
     <section class="hero">
         <div class="container">
             <div class="hero-content">
@@ -873,5 +905,11 @@
             </div>
         </div>
     </footer>
+    <script>
+    function toggleMobileNav() {
+        var nav = document.getElementById('mobile-nav');
+        nav.classList.toggle('open');
+    }
+    </script>
 </body>
 </html>
