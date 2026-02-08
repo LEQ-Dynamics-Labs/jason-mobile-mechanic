@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Mechanic - Professional Auto Repair At Your Location</title>
+    <meta name="description" content="Professional mobile mechanic services. We come to you for oil changes, brake service, battery replacement, and more. Serving your area with convenience and quality.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --navy: #0a1628;
+            --navy-mid: #111d32;
+            --navy-light: #1a2a44;
+            --sand: #c9b896;
+            --sand-light: #e8dfcc;
+            --sand-dark: #a89b6e;
+            --teal: #0d9488;
+            --teal-dark: #0f766e;
+            --white: #ffffff;
+            --silver: #c8d2dc;
+            --steel: #64748b;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--silver);
+            background: var(--navy);
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        a { color: var(--teal); text-decoration: none; transition: color 0.2s; }
+        a:hover { color: var(--sand); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 1rem 0;
+            background: rgba(10, 22, 40, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 184, 150, 0.15);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.375rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.03em;
+        }
+
+        .logo span { color: var(--teal); }
+
+        nav { display: flex; gap: 2rem; align-items: center; }
+
+        nav a {
+            color: var(--silver);
+            font-weight: 500;
+            font-size: 0.9375rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover { color: var(--white); }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            background: var(--teal);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .cta-btn:hover {
+            background: var(--teal-dark);
+            color: var(--white);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .mobile-menu-btn svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--white);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 10rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(13, 148, 136, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            max-width: 640px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(13, 148, 136, 0.1);
+            border: 1px solid rgba(13, 148, 136, 0.2);
+            border-radius: 100px;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--teal);
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        .hero h1 span { color: var(--teal); }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--silver);
+            margin-bottom: 2rem;
+            max-width: 520px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--teal-dark);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(201, 184, 150, 0.4);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--sand);
+            color: var(--sand);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 3rem;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(201, 184, 150, 0.15);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--white);
+            letter-spacing: -0.02em;
+        }
+
+        .stat-label {
+            font-size: 0.8125rem;
+            color: var(--steel);
+            margin-top: 0.25rem;
+            font-weight: 500;
+        }
+
+        section { padding: 5rem 0; }
+
+        .section-dark { background: var(--navy-mid); }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--sand);
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--silver);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(201, 184, 150, 0.15);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(13, 148, 136, 0.1);
+            border-radius: 12px;
+            margin-bottom: 1.25rem;
+        }
+
+        .service-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--teal);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--white);
+            margin-bottom: 0.75rem;
+        }
+
+        .service-card p {
+            font-size: 0.9375rem;
+            color: var(--steel);
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-size: clamp(1.75rem, 3vw, 2.25rem);
+            color: var(--white);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.25rem;
+            color: var(--silver);
+        }
+
+        .about-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .about-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            color: var(--silver);
+        }
+
+        .about-features li svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--teal);
+            fill: none;
+            stroke-width: 2;
+            flex-shrink: 0;
+            margin-top: 0.25rem;
+        }
+
+        .about-image {
+            background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy-light) 100%);
+            border: 1px solid rgba(201, 184, 150, 0.15);
+            border-radius: 20px;
+            padding: 4rem;
+            text-align: center;
+        }
+
+        .about-image-placeholder {
+            font-size: 4rem;
+            color: var(--sand);
+            opacity: 0.5;
+        }
+
+        .about-image p {
+            margin-top: 1rem;
+            color: var(--steel);
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--silver);
+            margin-bottom: 2rem;
+        }
+
+        .contact-method {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-method svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--teal);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .contact-method-info strong {
+            display: block;
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .contact-method-info span {
+            font-size: 0.9375rem;
+            color: var(--steel);
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(201, 184, 150, 0.15);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--silver);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            font-size: 1rem;
+            font-family: inherit;
+            background: var(--navy);
+            border: 1px solid rgba(201, 184, 150, 0.2);
+            border-radius: 8px;
+            color: var(--white);
+            transition: border-color 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--teal);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            background: var(--teal);
+            color: var(--white);
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .form-submit:hover {
+            background: var(--teal-dark);
+        }
+
+        /* CTA */
+        .cta-section {
+            text-align: center;
+            padding: 5rem 0;
+            background: var(--navy-mid);
+            border-top: 1px solid rgba(201, 184, 150, 0.15);
+            border-bottom: 1px solid rgba(201, 184, 150, 0.15);
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.125rem;
+            color: var(--silver);
+            margin-bottom: 2rem;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0 2rem;
+            border-top: 1px solid rgba(201, 184, 150, 0.15);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .footer-brand {
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .footer-brand span { color: var(--teal); }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--steel);
+            font-size: 0.875rem;
+        }
+
+        .footer-links a:hover { color: var(--white); }
+
+        .footer-copy {
+            width: 100%;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(201, 184, 150, 0.1);
+            font-size: 0.8125rem;
+            color: var(--steel);
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero { padding: 8rem 0 4rem; }
+            .hero-stats { flex-direction: column; gap: 1.5rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .contact-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .footer-content { flex-direction: column; text-align: center; }
+            .footer-links { flex-wrap: wrap; justify-content: center; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-buttons { flex-direction: column; }
+            .hero-buttons .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <a href="#" class="logo">Mobile<span>Mechanic</span></a>
+                <nav>
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <a href="#contact" class="cta-btn">Book Service</a>
+                <button class="mobile-menu-btn" aria-label="Menu">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">Professional Auto Repair</div>
+                <h1>We Come to <span>You</span> for All Your Vehicle Needs</h1>
+                <p>Quality mechanic services at your home or workplace. No tow truck, no waiting at a shop. Just convenient, reliable automotive care.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Schedule Service</a>
+                    <a href="#services" class="btn btn-outline">View Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div>
+                        <div class="stat-value">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div>
+                        <div class="stat-value">5000+</div>
+                        <div class="stat-label">Vehicles Serviced</div>
+                    </div>
+                    <div>
+                        <div class="stat-value">98%</div>
+                        <div class="stat-label">Customer Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">What We Do</div>
+                <h2>Complete Auto Care at Your Location</h2>
+                <p>Full-service mobile mechanic covering all your vehicle maintenance and repair needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3>Oil Change</h3>
+                    <p>Full synthetic, blend, or conventional oil changes with premium filters. We bring the oil and filter to you.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"/>
+                            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                        </svg>
+                    </div>
+                    <h3>Brake Service</h3>
+                    <p>Brake pad replacement, rotor resurfacing, and full brake system inspection and repair.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="1" y="6" width="22" height="12" rx="2" ry="2"/>
+                            <line x1="23" y1="13" x2="23" y2="11"/>
+                            <path d="M6 6V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/>
+                        </svg>
+                    </div>
+                    <h3>Battery & Electrical</h3>
+                    <p>Battery testing, replacement, alternator testing, and full electrical system diagnostics.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <h3>Tune-Ups</h3>
+                    <p>Complete engine diagnostics, spark plug replacement, air filter service, and performance tuning.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                        </svg>
+                    </div>
+                    <h3>AC & Heating</h3>
+                    <p>Climate control diagnostics, refrigerant recharge, heater core service, and climate sensor replacement.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                    </div>
+                    <h3>Scheduled Maintenance</h3>
+                    <p>Factory-recommended maintenance intervals, fluid services, and multi-point inspections.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <div class="section-label">About Us</div>
+                    <h2>Honest Work, Fair Prices, No Surprises</h2>
+                    <p>As a mobile mechanic, I bring 15+ years of dealership and independent shop experience directly to your driveway. No shop overhead means competitive pricing without sacrificing quality.</p>
+                    <p>I believe in transparent pricing, honest assessments, and only recommending work that your vehicle actually needs. Every service comes with a written estimate and explanation.</p>
+                    <ul class="about-features">
+                        <li>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>ASE Certified with 15+ years experience</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Original equipment parts and premium fluids</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Written estimates and warranty on all work</span>
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                            </svg>
+                            <span>Convenient scheduling - same week appointments available</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                        </svg>
+                    </div>
+                    <p style="color: var(--sand); font-weight: 600;">Your Location</p>
+                    <p>We bring tools, parts, and expertise to you</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Get In Touch</div>
+                <h2>Schedule Your Service Today</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours to confirm your appointment</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Ready to book or have questions? Reach out through any of these channels:</p>
+
+                    <div class="contact-method">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <div class="contact-method-info">
+                            <strong>Phone</strong>
+                            <span>(555) 123-4567</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <div class="contact-method-info">
+                            <strong>Email</strong>
+                            <span>service@mobile-mechanic.com</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div class="contact-method-info">
+                            <strong>Service Area</strong>
+                            <span>Greater Metro Area - Within 30 miles</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-method">
+                        <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <div class="contact-method-info">
+                            <strong>Hours</strong>
+                            <span>Mon-Sat: 7am - 7pm</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required placeholder="John Smith">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service...</option>
+                            <option value="oil-change">Oil Change</option>
+                            <option value="brake-service">Brake Service</option>
+                            <option value="battery">Battery & Electrical</option>
+                            <option value="tune-up">Tune-Up / Diagnostics</option>
+                            <option value="ac-heating">AC / Heating</option>
+                            <option value="maintenance">Scheduled Maintenance</option>
+                            <option value="other">Other / Multiple Items</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle">Vehicle Year, Make, Model</label>
+                        <input type="text" id="vehicle" name="vehicle" placeholder="e.g., 2019 Honda Civic">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Details</label>
+                        <textarea id="message" name="message" placeholder="Describe the issue or service you need. Any symptoms, noises, or warning lights?"></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Request Appointment</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Don't Let Car Problems Slow You Down</h2>
+            <p>Get back on the road faster with convenient mobile mechanic service</p>
+            <a href="#contact" class="btn btn-primary">Book Your Service Now</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">Mobile<span>Mechanic</span></div>
+                <div class.footer-links">
+                    <a href="#services">Services</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 Mobile Mechanic. All rights reserved. Serving your area with quality auto care.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
